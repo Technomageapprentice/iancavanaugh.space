@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ian Cavanaugh — Systems Designer</title>
+  <meta name="description" content="Ian Cavanaugh is a sales engineer and systems designer who builds automation pipelines, browser tools, and the infrastructure that makes complex workflows predictable.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ian Cavanaugh",
+    "url": "https://iancavanaugh.space",
+    "jobTitle": "Sales Engineer & Systems Designer",
+    "description": "Sales engineer and systems designer working in industrial manufacturing. Builds automation pipelines, browser-based tools, and the infrastructure that makes complex workflows predictable.",
+    "sameAs": [
+      "https://github.com/Technomageapprentice",
+      "https://www.linkedin.com/in/icavanaugh/"
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #0f0f0f;
+      --surface:      #161616;
+      --surface2:     #1e1e1e;
+      --border:       #2a2a2a;
+      --border-bright:#3a3a3a;
+      --text:         #e8e8e8;
+      --text-muted:   #888;
+      --text-dim:     #444;
+      --accent:       #e8c547;
+      --max-w:        1100px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── NAV ──────────────────────────────────────────── */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 15, 15, 0.96);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 32px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-brand:hover { color: var(--accent); }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 36px;
+    }
+
+    .nav-links a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"] { color: var(--accent); }
+
+    /* ── LAYOUT ───────────────────────────────────────── */
+
+    main {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ── HERO ─────────────────────────────────────────── */
+
+    .hero {
+      padding: 96px 0 88px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 22px;
+    }
+
+    .hero-tagline {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.8rem, 9vw, 7.2rem);
+      line-height: 0.92;
+      letter-spacing: 0.02em;
+      color: var(--accent);
+      margin-bottom: 32px;
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      max-width: 520px;
+      line-height: 1.7;
+      margin-bottom: 44px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 10px 22px;
+      border-radius: 2px;
+      transition: all 0.15s;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #0f0f0f;
+      border: 1px solid var(--accent);
+    }
+
+    .btn-primary:hover { background: #f0d060; border-color: #f0d060; }
+
+    .btn-ghost {
+      background: none;
+      color: var(--text-muted);
+      border: 1px solid var(--border-bright);
+    }
+
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── SECTION CHROME ───────────────────────────────── */
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 10px;
+      margin-bottom: 36px;
+    }
+
+    .section-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    .section-more {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .section-more:hover { color: var(--accent); }
+
+    /* ── PORTFOLIO CARDS ──────────────────────────────── */
+
+    .portfolio-preview {
+      padding: 76px 0 72px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 1px solid var(--border);
+      gap: 1px;
+      background: var(--border);
+    }
+
+    .portfolio-card {
+      background: var(--bg);
+      padding: 28px 24px 24px;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: background 0.15s;
+    }
+
+    .portfolio-card:hover { background: var(--surface); }
+
+    .card-category {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.56rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .card-desc {
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.55;
+      flex: 1;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 2px;
+    }
+
+    .tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.08em;
+      background: var(--surface2);
+      border: 1px solid var(--border-bright);
+      border-radius: 2px;
+      padding: 2px 7px;
+      color: var(--text-dim);
+    }
+
+    .card-cta {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      color: var(--text-dim);
+      margin-top: 6px;
+      transition: color 0.15s;
+    }
+
+    .portfolio-card:hover .card-cta { color: var(--accent); }
+
+    /* ── ABOUT TEASER ─────────────────────────────────── */
+
+    .about-teaser {
+      padding: 76px 0 88px;
+    }
+
+    .about-body {
+      max-width: 620px;
+    }
+
+    .about-text {
+      font-size: 0.975rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 32px;
+    }
+
+    .about-text + .about-text { margin-top: -12px; }
+
+    /* ── FOOTER ───────────────────────────────────────── */
+
+    footer {
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 28px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-copy {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      color: var(--text-dim);
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+    }
+
+    .footer-links a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .footer-links a:hover { color: var(--accent); }
+
+    /* ── RESPONSIVE ───────────────────────────────────── */
+
+    @media (max-width: 860px) {
+      .portfolio-grid { grid-template-columns: 1fr 1fr; }
+      .portfolio-grid .portfolio-card:last-child {
+        grid-column: 1 / -1;
+        border-top: 1px solid var(--border);
+      }
+    }
+
+    @media (max-width: 600px) {
+      nav      { padding: 0 20px; }
+      main     { padding: 0 20px; }
+      .footer-inner { padding: 24px 20px; }
+
+      .nav-links { gap: 20px; }
+      .nav-links a { font-size: 0.62rem; }
+
+      .hero { padding: 64px 0 60px; }
+      .portfolio-preview, .about-teaser { padding-top: 56px; padding-bottom: 52px; }
+
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .portfolio-grid .portfolio-card:last-child {
+        grid-column: auto;
+        border-top: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav aria-label="Primary navigation">
+      <a href="/" class="nav-brand" aria-label="Ian Cavanaugh — home">Ian Cavanaugh</a>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ── HERO ────────────────────────────────────────── -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <p class="hero-eyebrow">Ian Cavanaugh</p>
+      <h1 class="hero-tagline" id="hero-heading">
+        Systems over<br>spreadsheets.
+      </h1>
+      <p class="hero-sub">
+        Sales engineer turned systems designer — I build the tools that make
+        complex workflows predictable.
+      </p>
+      <div class="hero-actions">
+        <a href="portfolio.html" class="btn btn-primary">View Work</a>
+        <a href="about.html"     class="btn btn-ghost">About →</a>
+      </div>
+    </section>
+
+    <!-- ── PORTFOLIO PREVIEW ────────────────────────────── -->
+    <section class="portfolio-preview" aria-labelledby="work-heading">
+      <div class="section-header">
+        <h2 class="section-label" id="work-heading">Selected Work</h2>
+        <a href="portfolio.html" class="section-more">All projects →</a>
+      </div>
+
+      <div class="portfolio-grid">
+
+        <!-- Card 1: OnScreen Takeoff -->
+        <!-- TODO: update href when portfolio page exists -->
+        <a href="portfolio.html#takeoff" class="portfolio-card">
+          <span class="card-category">Browser Tool</span>
+          <h3 class="card-title">On-Screen Takeoff Tool</h3>
+          <p class="card-desc">
+            A browser-based measurement tool for reading HVAC floor plans.
+            Custom canvas engine for drawing and scaling duct runs; AWS backend
+            for auth, storage, and persistence.
+          </p>
+          <div class="card-tags">
+            <span class="tag">Canvas API</span>
+            <span class="tag">AWS Cognito</span>
+            <span class="tag">DynamoDB</span>
+            <span class="tag">Vanilla JS</span>
+          </div>
+          <span class="card-cta">View project →</span>
+        </a>
+
+        <!-- Card 2: Estimating Pipeline -->
+        <a href="portfolio.html#pipeline" class="portfolio-card">
+          <span class="card-category">Systems Design</span>
+          <h3 class="card-title">Estimating Pipeline</h3>
+          <p class="card-desc">
+            Three-layer automation replacing a manual estimating workflow:
+            takeoff ingestion, a Python pricing engine, and a browser-based
+            proposal dashboard. Coverage grew from 14% to 56% of jobs.
+          </p>
+          <div class="card-tags">
+            <span class="tag">Python</span>
+            <span class="tag">PowerShell</span>
+            <span class="tag">AWS S3</span>
+            <span class="tag">SQLite</span>
+          </div>
+          <span class="card-cta">View project →</span>
+        </a>
+
+        <!-- Card 3: VBA → Python -->
+        <a href="portfolio.html#modernization" class="portfolio-card">
+          <span class="card-category">Case Study</span>
+          <h3 class="card-title">VBA → Python Modernization</h3>
+          <p class="card-desc">
+            Years maintaining production VBA tools, then leading the migration
+            to Python. A case study in understanding legacy systems from the
+            inside before designing what replaces them.
+          </p>
+          <div class="card-tags">
+            <span class="tag">VBA</span>
+            <span class="tag">Python</span>
+            <span class="tag">Legacy Systems</span>
+          </div>
+          <span class="card-cta">Read case study →</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ── ABOUT TEASER ──────────────────────────────────── -->
+    <section class="about-teaser" aria-labelledby="about-heading">
+      <div class="section-header">
+        <h2 class="section-label" id="about-heading">About</h2>
+      </div>
+
+      <div class="about-body">
+        <p class="about-text">
+          My career sits at the intersection of technical sales and software
+          architecture — a position I've occupied long enough to understand
+          why the gap between those two disciplines keeps creating problems.
+        </p>
+        <p class="about-text">
+          The pattern I keep returning to: find the workflow held together
+          with Word documents and institutional memory, then design the
+          system that should replace it.
+        </p>
+        <a href="about.html" class="btn btn-ghost">Full bio →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-copy">© 2026 Ian Cavanaugh — built by hand.</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Technomageapprentice" rel="noopener noreferrer" target="_blank">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/icavanaugh/" rel="noopener noreferrer" target="_blank">LinkedIn</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>
