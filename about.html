@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Ian Cavanaugh</title>
+  <meta name="description" content="Ian Cavanaugh is a sales engineer and systems designer working in industrial manufacturing. He builds the automation pipelines and tools that make complex workflows predictable.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <script data-goatcounter="https://iancavanaugh.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #0f0f0f;
+      --surface:      #161616;
+      --surface2:     #1e1e1e;
+      --border:       #2a2a2a;
+      --border-bright:#3a3a3a;
+      --text:         #e8e8e8;
+      --text-muted:   #888;
+      --text-dim:     #444;
+      --accent:       #e8c547;
+      --max-w:        1100px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── NAV ──────────────────────────────────────────── */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 15, 15, 0.96);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 32px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-brand:hover { color: var(--accent); }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 36px;
+    }
+
+    .nav-links a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"] { color: var(--accent); }
+
+    /* ── LAYOUT ───────────────────────────────────────── */
+
+    main {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ── PAGE HEADER ──────────────────────────────────── */
+
+    .page-header {
+      padding: 80px 0 64px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 22px;
+    }
+
+    .page-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      line-height: 0.92;
+      letter-spacing: 0.02em;
+      color: var(--accent);
+    }
+
+    /* ── ABOUT BODY ───────────────────────────────────── */
+
+    .about-section {
+      padding: 72px 0 88px;
+    }
+
+    .about-columns {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .about-bio p {
+      font-size: 0.975rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+
+    .about-bio p:last-child { margin-bottom: 0; }
+
+    .about-bio p em {
+      color: var(--text);
+      font-style: normal;
+      font-weight: 400;
+    }
+
+    /* ── SIDEBAR ──────────────────────────────────────── */
+
+    .about-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .sidebar-block {
+      border-left: 1px solid var(--border-bright);
+      padding-left: 20px;
+    }
+
+    .sidebar-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.56rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 12px;
+    }
+
+    .sidebar-items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .sidebar-items li {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .sidebar-items li span {
+      color: var(--text-dim);
+      font-size: 0.62rem;
+      display: block;
+    }
+
+    /* ── SECTION CHROME ───────────────────────────────── */
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 10px;
+      margin-bottom: 36px;
+    }
+
+    .section-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    /* ── BUTTONS ──────────────────────────────────────── */
+
+    .btn {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 10px 22px;
+      border-radius: 2px;
+      transition: all 0.15s;
+      display: inline-block;
+    }
+
+    .btn-ghost {
+      background: none;
+      color: var(--text-muted);
+      border: 1px solid var(--border-bright);
+    }
+
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── FOOTER ───────────────────────────────────────── */
+
+    footer {
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 28px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-copy {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      color: var(--text-dim);
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+    }
+
+    .footer-links a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .footer-links a:hover { color: var(--accent); }
+
+    /* ── RESPONSIVE ───────────────────────────────────── */
+
+    @media (max-width: 860px) {
+      .about-columns {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      nav          { padding: 0 20px; }
+      main         { padding: 0 20px; }
+      .footer-inner { padding: 24px 20px; }
+
+      .nav-links { gap: 20px; }
+      .nav-links a { font-size: 0.62rem; }
+
+      .page-header { padding: 56px 0 48px; }
+      .about-section { padding: 52px 0 64px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav aria-label="Primary navigation">
+      <a href="/" class="nav-brand" aria-label="Ian Cavanaugh — home">Ian Cavanaugh</a>
+      <ul class="nav-links">
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ── PAGE HEADER ────────────────────────────────── -->
+    <div class="page-header">
+      <p class="page-eyebrow">About</p>
+      <h1 class="page-title">Ian Cavanaugh</h1>
+    </div>
+
+    <!-- ── ABOUT BODY ─────────────────────────────────── -->
+    <section class="about-section" aria-label="Biography">
+      <div class="section-header">
+        <h2 class="section-label">Background</h2>
+      </div>
+
+      <div class="about-columns">
+
+        <div class="about-bio">
+          <p>
+            Sales engineer and systems designer working in industrial manufacturing.
+            The job is technical sales: translating customer requirements into fabricated
+            product. What I've built around it is software architecture.
+          </p>
+          <p>
+            The degree is in Naval Architecture and Marine Engineering from Webb Institute.
+            A ship is among the most tightly integrated systems humans build: structures,
+            fluids, machinery, electrical, and stability all interdependent, all constrained
+            by the same hull. The maritime connections are real, but the discipline transfers.
+            That's how a naval architect ends up building estimating pipelines for HVAC.
+          </p>
+          <p>
+            I built an estimating pipeline from scratch in a single quarter. Three layers
+            of automation replaced a manual, spreadsheet-driven process: takeoff ingestion,
+            a pricing engine, and a browser-based proposal dashboard running on AWS.
+            <em>Job coverage went from 14% to 56% in the first week it ran.</em>
+            The estimators who use it stopped doing the math and started checking it.
+          </p>
+          <p>
+            The work I keep returning to: find the process held together with Word documents
+            and institutional memory, then build what should replace it.
+          </p>
+          <p>
+            I've been writing code long enough to have VBA scars. Currently working toward
+            AWS Solutions Architect certification and building toward a role where the scope
+            is infrastructure rather than individual tools.
+          </p>
+          <p>
+            Outside of work: Tang Soo Do, 3rd Dan black belt, and BJJ, currently brown belt.
+            The discipline transfers.
+          </p>
+          <p>
+            This site is where I keep the work that's worth showing.
+          </p>
+        </div>
+
+        <aside class="about-sidebar" aria-label="Quick facts">
+
+          <div class="sidebar-block">
+            <p class="sidebar-label">Credentials</p>
+            <ul class="sidebar-items">
+              <li>B.S. Naval Architecture &amp; Marine Engineering <span>Webb Institute</span></li>
+              <li>EIT <span>Engineer in Training</span></li>
+              <li>Eagle Scout</li>
+              <li>AWS SAA-C03 <span>in progress</span></li>
+              <li>3rd Dan Black Belt <span>Tang Soo Do</span></li>
+              <li>Brown Belt <span>Brazilian Jiu-Jitsu</span></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-block">
+            <p class="sidebar-label">Links</p>
+            <ul class="sidebar-items">
+              <li><a href="https://github.com/Technomageapprentice" rel="noopener noreferrer" target="_blank" style="color:var(--text-muted);text-decoration:none;">GitHub</a></li>
+              <li><a href="https://www.linkedin.com/in/icavanaugh/" rel="noopener noreferrer" target="_blank" style="color:var(--text-muted);text-decoration:none;">LinkedIn</a></li>
+            </ul>
+          </div>
+
+          <a href="portfolio.html" class="btn btn-ghost">View Work →</a>
+
+        </aside>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-copy">© 2026 Ian Cavanaugh — built by hand.</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Technomageapprentice" rel="noopener noreferrer" target="_blank">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/icavanaugh/" rel="noopener noreferrer" target="_blank">LinkedIn</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+# Ian Cavanaugh
+
+> Systems over spreadsheets.
+
+Ian Cavanaugh is a sales engineer and systems designer working in industrial manufacturing. His background is in Naval Architecture and Marine Engineering (Webb Institute) — a discipline built on cross-disciplinary systems integration. That foundation has carried across industries: from maritime into HVAC, and from HVAC into the software that runs around it.
+
+His career sits at the overlap of technical sales and software architecture. The recurring pattern in his work: find the process held together with Word documents and institutional memory, then build what should replace it.
+
+## Work
+
+Ian built an estimating pipeline from scratch in a single quarter — three layers of automation (takeoff ingestion, pricing engine, browser-based proposal dashboard) running on AWS. Job coverage went from 14% to 56% in the first week it ran.
+
+He also built a browser-based on-screen takeoff tool for reading HVAC floor plans: a custom canvas engine with AWS Cognito, DynamoDB, and S3 for auth, storage, and persistence.
+
+Earlier in his career he maintained production VBA tooling for years before leading its migration to Python — a case study in understanding legacy systems from the inside before designing what replaces them.
+
+## Credentials
+
+- B.S. Naval Architecture and Marine Engineering, Webb Institute
+- Engineer in Training (EIT)
+- Eagle Scout
+- AWS Solutions Architect Associate (SAA-C03) — in progress
+- 3rd Dan Black Belt, Tang Soo Do
+- Brown Belt, Brazilian Jiu-Jitsu
+
+## Site Structure
+
+- / — Homepage with tagline, portfolio preview, and about teaser
+- /about.html — Full biography and credentials
+- /portfolio.html — Case studies (in progress)
+- /blog.html — Writing (in progress)
+- /contact.html — Contact (in progress)
+
+## Links
+
+- GitHub: https://github.com/Technomageapprentice
+- LinkedIn: https://www.linkedin.com/in/icavanaugh/
+- Site: https://iancavanaugh.space
