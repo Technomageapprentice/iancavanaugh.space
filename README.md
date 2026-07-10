@@ -3,7 +3,7 @@
 **Status:** Active — in progress  
 **Last updated:** 2026-06-29  
 **Hosting:** BlueHost (basic) — static HTML, WordPress removed  
-**Repo:** https://github.com/Technomageapprentice/Obsidian
+**Repo:** https://github.com/Technomageapprentice/iancavanaugh.space
 
 ---
 
