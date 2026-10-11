@@ -25,11 +25,11 @@ Earlier in his career he maintained production VBA tooling for years before lead
 
 ## Site Structure
 
-- / — Homepage with tagline, portfolio preview, and about teaser
-- /about.html — Full biography and credentials
-- /portfolio.html — Case studies (in progress)
-- /notes.html — Personal wiki (in progress)
-- /contact.html — Contact (in progress)
+- / - Homepage with tagline, portfolio preview, and about teaser
+- /about.html - Full biography and credentials
+- /portfolio.html - Case studies (in progress)
+- /notes.html - Personal wiki (in progress)
+- /contact.html - Contact (in progress)
 
 ## Links
 
